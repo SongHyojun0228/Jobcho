@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{includes/layout}" lang="ko">
+
+<head>
+	<title layout:title="로그인">로그인</title>
+	<link rel="stylesheet" th:href="@{/css/user/login.css}" />
+	<script th:src="@{/javascript/login.js}" defer></script>
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<div class="login_container">
+			<h1>로그인</h1>
+			<form action="/login" class="login_form">
+				<input type="email" placeholder="이메일" class="login_input input_email" />
+				<p class="caution">이메일 주소를 입력해주세요.</p>
+				<input type="password" placeholder="비밀번호" class="login_input input_password" />
+				<p class="caution">비밀번호를 입력해주세요.</p>
+				<div class="select_container">
+					<label class="checkbox">
+						<input type="checkbox" />이메일 기억하기
+					</label>
+					<label class="checkbox">
+						<input type="checkbox" />로그인 상태 유지
+					</label>
+					<a href="/forgotpassword" class="forgotpassword">비밀번호 찾기</a>
+				</div>
+				<button class="login_btn">로그인</button>
+				<p class="signup">
+					잡초가 처음이신가요?
+					<a th:href="@{/signup}">회원가입</a>
+				</p>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
