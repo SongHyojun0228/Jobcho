@@ -1,4 +1,4 @@
-main {
+.main {
 	min-height: calc(100vh - 65.5px);
 	display: flex;
 	justify-content: center;
@@ -51,11 +51,27 @@ h1 {
 	display: none;
 	margin-bottom: 0.5rem;
 	font-weight: 500;
+	color: rgb(169, 69, 65);
 }
 
 .shown_caution {
 	font-size: 0.9rem;
 	margin: 0.3rem 0;
+}
+
+.toggle_caution {
+	background-color: rgb(248, 230, 232);
+	padding: 0.5rem;
+	padding-top: 1rem;
+	border: 1px solid rgb(169, 69, 65);
+	border-radius: 4px;
+}
+
+.error_form_caution {
+	margin-bottom: 0.5rem;
+	font-weight: 500;
+	color: rgb(169, 69, 65);
+	padding-left: 0.5rem;
 }
 
 .select_container {
