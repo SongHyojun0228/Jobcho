@@ -10,5 +10,4 @@ public class MainController {
     public String redirectToSignup() {
         return "redirect:/user/signup";
     }
-	//커밋테스트
 }

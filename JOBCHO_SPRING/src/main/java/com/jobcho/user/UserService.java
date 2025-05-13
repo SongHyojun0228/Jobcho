@@ -1,5 +1,7 @@
 package com.jobcho.user;
 
+import java.util.Optional;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,12 @@ public class UserService {
 		user.setUserEmail(email);
 		user.setUserPassword(passwordEncoder.encode(password));
 		this.userRepository.save(user);
+		return user;
+	}
+	
+	public Optional<Users> getUser(String userEmail) {
+		Optional<Users> user = this.userRepository.findByUserEmail(userEmail);
+
 		return user;
 	}
 

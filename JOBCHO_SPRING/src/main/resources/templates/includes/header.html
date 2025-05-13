@@ -4,5 +4,9 @@
 			<img th:src="@{/images/Jobcho_logo.png}" alt="Jobcho_logo">
 			<p>Jobcho</p>
 		</div>
+		
+		<div sec:authorize="isAuthenticated()" class="isLogin">
+			<a th:href="@{/user/logout}">로그아웃</a>
+		</div>
 	</header>
 </th:block>

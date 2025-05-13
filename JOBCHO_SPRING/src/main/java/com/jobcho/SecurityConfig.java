@@ -23,8 +23,12 @@ public class SecurityConfig {
 				.usernameParameter("user_email")
 				.passwordParameter("user_password") 
 				.loginPage("/user/login")
-				.defaultSuccessUrl("/"));
-
+				.defaultSuccessUrl("/"))
+		.logout((logout) -> logout
+				.logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
+				.logoutSuccessUrl("/")
+				.invalidateHttpSession(true));
+		
 		return http.build();
 	}
 

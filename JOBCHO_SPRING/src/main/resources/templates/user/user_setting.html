@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{includes/layout}" lang="ko">
+
+<head>
+	<title layout:title="개인설정">개인설정</title>
+	<link rel="stylesheet" th:href="@{/css/user/user_setting.css}" />
+	<script th:src="@{/javascript/user_setting.js}" defer></script>
+</head>
+
+<body>
+	<div class="main" layout:fragment="content">
+		<div class="path">
+			<a class="go_to_index" th:href="@{/index}">잔디 메인</a>
+			<span> > </span>
+			<a class="here" th:href="@{/user/setting}">계정 설정</a>
+		</div>
+		<div class="main_container">
+			<div class="profile_img personal_info_items">
+				<div class="info_texts">
+					<p>프로필 사진</p>
+					<img th:src="@{/images/default_profile.png}" alt="profile_img" />
+				</div>
+			</div>
+			<div class="profile_name personal_info_items">
+				<div class="info_texts">
+					<p>이름</p>
+					<p class="user_info">송효준</p>
+					<form class="change_form">
+						<input type="text" placeholder="송효준" />
+						<div class="change_btns">
+							<button class="cancel_btn">취소</button>
+							<button class="confirm_btn">확인</button>
+						</div>
+					</form>
+				</div>
+				<img th:src="@{/images/arrow-down.png}" class="toggle_btn" alt="arrow_down" />
+			</div>
+			<div class="profile_email personal_info_items">
+				<div class="info_texts">
+					<p>이메일 관리</p>
+					<p class="user_info">thdgywns2300@gmail.com</p>
+					<form class="change_form">
+						<input type="email" placeholder="thdgywns2300@gmail.com" />
+						<div class="change_btns">
+							<button class="cancel_btn">취소</button>
+							<button class="confirm_btn">확인</button>
+						</div>
+					</form>
+				</div>
+				<img th:src="@{/images/arrow-down.png}" class="toggle_btn" alt="arrow_down" />
+			</div>
+			<div class="profile_pw personal_info_items">
+				<div class="info_texts">
+					<p>비밀번호 변경</p>
+					<p class="user_info">*******</p>
+					<form class="change_form">
+						<input type="password" placeholder="현재 비밀번호" />
+						<input type="password" placeholder="변경할 비밀번호" />
+						<div class="change_btns">
+							<button class="cancel_btn">취소</button>
+							<button class="confirm_btn">확인</button>
+						</div>
+					</form>
+				</div>
+				<img th:src="@{/images/arrow-down.png}" class="toggle_btn" alt="arrow_down" />
+			</div>
+			<div class="profile_delete personal_info_items">
+				<div class="info_texts">
+					<p class="user_info">잡초 계정 삭제</p>
+					<form class="change_form">
+						<div class="change_btns">
+							<input type="hidden" value="dummy" />
+							<p class="last_confirm">잔디 계정을 삭제하시겠습니까?</p>
+							<button class="cancel_btn">취소</button>
+							<button class="confirm_btn delete_btn">잔디 계정을 삭제</button>
+						</div>
+					</form>
+				</div>
+				<img th:src="@{/images/arrow-down.png}" class="toggle_btn" alt="arrow_down" />
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
