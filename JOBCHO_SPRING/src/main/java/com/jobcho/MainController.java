@@ -10,4 +10,6 @@ public class MainController {
     public String redirectToSignup() {
         return "redirect:/user/signup";
     }
+	
+	//thdgywns commit
 }
