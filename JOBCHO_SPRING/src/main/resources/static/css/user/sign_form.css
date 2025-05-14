@@ -47,18 +47,6 @@ h1 {
 	margin-top: 1rem;
 }
 
-.caution {
-	display: none;
-	margin-bottom: 0.5rem;
-	font-weight: 500;
-	color: rgb(169, 69, 65);
-}
-
-.shown_caution {
-	font-size: 0.9rem;
-	margin: 0.3rem 0;
-}
-
 .toggle_caution {
 	background-color: rgb(248, 230, 232);
 	padding: 0.5rem;
