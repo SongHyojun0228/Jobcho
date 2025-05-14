@@ -96,3 +96,15 @@ header {
 .header_user_info p {
   font-weight: bold;
 }
+
+.caution {
+	display: none;
+	margin-bottom: 0.5rem;
+	font-weight: 500;
+	color: rgb(169, 69, 65);
+}
+
+.shown_caution {
+	font-size: 0.9rem;
+	margin: 0.3rem 0;
+}	

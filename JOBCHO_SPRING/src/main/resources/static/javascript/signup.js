@@ -11,13 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			emailPass = true;
 		} else {
 			emailCaution.style.display = 'block';
-			emailCaution.style.color = 'rgb(255, 53, 53)';
+			emailCaution.style.color = 'rgb(169, 69, 65)';
 			emailPass = false;
 		}
 		joincheckFormValid();
 	});
-
-	// 🌿 해당 이메일 계정의 존재 여부
 
 	// 🌿 비밀번호 재확인 일치 여부 
 	const inputPassword = document.querySelector(".input_password");

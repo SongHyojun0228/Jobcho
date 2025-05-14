@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
 	const toggleItems = document.querySelectorAll(".personal_info_items");
 
 	toggleItems.forEach((item) => {
@@ -57,5 +58,23 @@ document.addEventListener("DOMContentLoaded", () => {
 			userInfo.style.display = "block";
 			changeForm.style.display = "none";
 		});
+	});
+
+	// 🌿 이메일 변경 시 검증
+	const emailInput = document.querySelector(".email_input");
+	const emailForm = emailInput.closest("form");
+	const emailCaution = document.querySelector(".email_caution");
+	const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+	emailForm.addEventListener("submit", (e) => {
+		const emailValue = emailInput.value.trim();
+
+		if (!emailRegex.test(emailValue)) {
+			e.preventDefault(); // 폼 전송 막기
+			emailCaution.style.display = "block";
+			emailCaution.textContent = "올바른 이메일 형식이 아닙니다.";
+		} else {
+			emailCaution.style.display = "none";
+		}
 	});
 });
