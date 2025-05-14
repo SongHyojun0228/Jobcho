@@ -1,0 +1,232 @@
+<html layout:decorate="~{workspace/layout_workspace}">
+<div layout:fragment="content" class="container my-3">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Welcome | team_name</title>
+	    <link rel="stylesheet" th:href="@{/css/includes/shared.css}" />
+	    <link rel="stylesheet" th:href="@{/css/workspace/workspace.css}" />
+	    <link rel="stylesheet" th:href="@{/css/workspace/uploadnotification.css}" />
+	    <link rel="stylesheet" th:href="@{/css/workspace/task.css}" />
+	    <link rel="stylesheet" th:href="@{/css/workspace/bookmark.css}" />
+	</head>
+
+	<body>
+	    <header>
+	        <div class="jobcho_logo">
+	            <img th:src="@{/images/Jobcho_logo.png}" alt="Jobcho_logo" />
+	            <p>Jabcho</p>
+	        </div>
+	        <div class="header_icon_info">
+	            <a href=""><img th:src="@{/images/icons/alarm-bell.png}" alt="i_alarm"></a>
+	            <a href=""><img th:src="@{/images/icons/organigram.png}" alt="i_organization"></img></a>
+	            <a href=""><img th:src="@{/images/icons/search (1).png}" alt="i_alarm"></img></a>
+	            <a href="" id="menu_link"><img th:src="@{/images/icons/menu.png}" alt="i_menu" id="menu_icon"></img></a>
+	            <div class="popup2" id="popup2">
+	                <div class="menu_icon_plus">
+	                    <a href="" id="task-link">할 일</a>
+	                    <a href="" id="vote-link">투표</a>
+	                    <a href="" id="bookmark-link">즐겨찾기</a>
+	                </div>
+	            </div>
+	            <a href=""><img th:src="@{/images/icons/menu (1).png}" alt="i_alarm"></img></a>
+	        </div>
+	    </header>
+	    <main>
+	        <div class="main">
+	            <div class="side_bar">
+	                <div class="workroom">
+	                    <div class="search_chat_line">
+	                        <div class="icon_box">
+	                            <img th:src="@{/images/icons/search_black.png}" alt="대화방 검색 아이콘">
+	                            <p>대화방 검색</p>
+	                        </div>
+	                        <div class="icon_box">
+	                            <img th:src="@{/images/icons/show_menu.png}" alt="메뉴 숨기기">
+	                        </div>
+	                    </div>
+	                    <div class="search_chat_line">
+	                        <div class="icon_box">
+	                            <img th:src="@{/images/icons/arrow-down.png}" alt="숨기기,보이기 화살표">
+	                            <p>채팅방</p>
+	                        </div>
+	                        <div class="icon_box_2">
+	                            <img th:src="@{/images/icons/sort_ascending.png}" alt="정렬메뉴">
+	                        </div>
+	                        <div class="icon_box_2">
+	                            <img th:src="@{/images/icons/cross-mark.png}" alt="새로 만들기 버튼">
+	                        </div>
+	                    </div>
+	                    <div class="folder">
+	                        <div class="icon_box">
+	                            <img th:src="@{/images/icons/arrow-down.png}" alt="숨기기,보이기 화살표">
+	                            <a href="..">Default folder</a>
+	                        </div>
+	                        <div class="folder_in">
+	                            <div class="icon_box_chat">
+	                                <img th:src="@{/images/icons/empty_star.png}" alt="즐겨찾기_빔">
+	                                <a href="..">채팅방 1</a>
+	                            </div>
+	                            <div class="icon_box_chat">
+	                                <img th:src="@{/images/icons/empty_star.png}" alt="즐겨찾기_빔">
+	                                <a href="..">채팅방 2</a>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="line_side_bar"></div>
+	                    <div class="non_folder">
+	                        <div class="icon_box_chat">
+	                            <img th:src="@{/images/icons/empty_star.png}" alt="즐겨찾기_빔">
+	                            <img th:src="@{/images/Jobcho_logo.png}" alt="잡초 로고 small">
+	                            <a href="..">The Jobcho (나와의 대화)</a>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="chat">
+	                <div class="chat_header">
+	                    <div class="chat_header_title">
+	                        <img th:src="@{/images/icons/empty_star.png}" alt="즐겨찾기">
+	                        <p>쳇 제목</p>
+	                    </div>
+	                    <div class="chat_header_emoticon">
+	                        <img th:src="@{/images/icons/alarm-bell.png}" alt="알람">
+	                        <img th:src="@{/images/icons/currunt_users.png}" alt="현재 유저 이미지">
+	                        <img th:src="@{/images/icons/add-user.png}" alt="유저 추가 이미지">
+	                        <img th:src="@{/images/icons/more-options.png}" alt="더보기 이미지" id="plus_icon">
+	                        <div class="popup" id="popup">
+	                            <div>
+	                                <a href="" id="notice-link">공지등록</a>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="chat_main">
+	                    <div class="chat_box">
+							<form th:action="@{/workspace/foldercreate}" method="post">
+								<input type="text" name="folder_name" id="folder_name">
+								<input type="submit" value="테스트 post">
+							</form>
+	                    </div>
+	                    <div class="chat_input_box">
+	                        <input type="text" placeholder="메시지를 입력하세요.">
+	                    </div>
+	                    <div class="chat_emoticon">
+	                        <img th:src="@{/images/icons/emoticon.png}" alt="채팅 메뉴">
+	                        <button onclick=sandchat()><img th:src="@{/images/icons/arrow-chat.png}" alt=""></button>
+	                    </div>
+	                </div>
+	            </div>
+
+	            <div class="chat-aside" id="chat-aside">
+	                <div class="task_total_container">
+	                    <div class="upper_container">
+	                        <p class="title">할 일</p>
+	                        <button>+ 할 일 생성</button>
+	                        <select name="" id="">
+	                            <option value="" selected>참여한 대화방</option>
+	                            <option value="">영화 버리고 협업툴 해말아</option>
+	                        </select>
+	                    </div>
+
+	                    <div class="under_container">
+	                        <p class="number_of_tasks"><strong>2</strong>개의 할 일</p>
+
+	                        <div class="tasks">
+	                            <p class="task_status">진행률 <strong>0</strong>%</p>
+	                            <p class="task_title">유토 갈비뼈 괘유 기원</p>
+	                            <p class="task_content">꾀병이 아님을 증명해</p>
+	                            <p class="task_date">2025/04/11 PM 05:20 ~ 2025/04/12 AM 00:00</p>
+	                            <p class="team_name">영화 버리고 협업툴 해말아</p>
+	                        </div>
+
+	                        <div class="tasks">
+	                            <p class="task_status">진행률 <strong>0</strong>%</p>
+	                            <p class="task_title">유토 갈비뼈 괘유 기원</p>
+	                            <p class="task_content">꾀병이 아님을 증명해</p>
+	                            <p class="task_date">2025/04/11 PM 05:20 ~ 2025/04/12 AM 00:00</p>
+	                            <p class="team_name">영화 버리고 협업툴 해말아</p>
+	                        </div>
+	                    </div>
+	                </div>
+
+	                <div class="bookmark_total_container">
+	                    <div class="upper_container">
+	                        <div class="bookmark_title">
+	                            <p class="bookmark_sign">즐겨찾기</p>
+	                            <p>X</p>
+	                        </div>
+	                        <div class="select_container">
+	                            <select name="" id="">
+	                                <option value="" selected>모든 대화방</option>
+	                                <option value="">Team_3</option>
+	                            </select>
+	                        </div>
+	                        <div class="btn_container">
+	                            <div class="form_btns">
+	                                <button class="all_form_btn">모든 형식</button>
+	                                <button class="file_form_btn">파일 형식</button>
+	                            </div>
+	                            <div class="sort_btn_container">
+	                                <button class="sort_btn">
+	                                    <img th:src="@{/images/icons/sort_ascending.png}" alt="" />등록 순
+	                                </button>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="under_container">
+	                        <div class="bookmarks">
+	                            <p class="chatroom_name">영화 버리고 협업툴 해말아</p>
+	                            <div class="bookmark_items">
+	                                <img th:src="@{/images/default_profile.png}" alt="profile_img" />
+	                                <div class="right_container">
+	                                    <div class="bookmark_info">
+	                                        <p class="user_name">송효준</p>
+	                                        <p class="upload_date">2025/04/11 PM 04:32</p>
+	                                    </div>
+	                                    <p class="bookmark_contents">유토 갈비뼈 쾌유 기원</p>
+	                                </div>
+	                            </div>
+	                        </div>
+
+	                        <div class="bookmarks">
+	                            <p class="chatroom_name">영화 버리고 협업툴 해말아</p>
+	                            <div class="bookmark_items">
+	                                <img th:src="@{/images/default_profile.png}" alt="profile_img" />
+	                                <div>
+	                                    <div class="bookmark_info">
+	                                        <p class="user_name">송효준</p>
+	                                        <p class="upload_date">2025/04/11 PM 04:32</p>
+	                                    </div>
+	                                    <p class="bookmark_contents">유토 갈비뼈 쾌유 기원</p>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </main>
+
+	    <div class="overlay" id="overlay"></div>
+	    <div class="modal" id="modal">
+	        <div class="notification_total_container">
+	            <p class="title">공지등록</p>
+	            <p class="title2">메시지</p>
+	            <form action="" class="register_form">
+	                <textarea name="" id="" rows="10">유토 갈비뼈 쾌유 기원</textarea>
+	                <p class="numbers_of_text">
+	                    <span class=""></span>
+	                    / 5,000
+	                </p>
+	                <div class="btns">
+	                    <button class="cancel_btn">취소</button>
+	                    <button class="register_btn">등록하기</button>
+	                </div>
+	            </form>
+	        </div>
+	    </div>
+	
+</div>
+</html>
