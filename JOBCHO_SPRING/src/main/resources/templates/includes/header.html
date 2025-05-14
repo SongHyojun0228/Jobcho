@@ -4,8 +4,13 @@
 			<img th:src="@{/images/Jobcho_logo.png}" alt="Jobcho_logo">
 			<p>Jobcho</p>
 		</div>
-		
+
 		<div sec:authorize="isAuthenticated()" class="isLogin">
+			<div class="login_profile">
+				<img th:src="@{/images/default_profile.png}">
+				<p class="login_username" th:text="${user.userName}"></p>
+			</div>
+			<span>|</span>
 			<a th:href="@{/user/logout}">로그아웃</a>
 		</div>
 	</header>

@@ -1,15 +1,20 @@
 package com.jobcho.user;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
+
+import com.jobcho.member.Members;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.validation.constraints.Email;
 import lombok.Getter;
@@ -18,7 +23,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@DynamicInsert	
+@DynamicInsert
 public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_user")
@@ -48,5 +53,8 @@ public class Users {
 	@Column
 	@ColumnDefault("0")
 	private Integer isAdmin;
+
+	@OneToMany(mappedBy = "user")
+	private List<Members> members = new ArrayList<>();
 
 }

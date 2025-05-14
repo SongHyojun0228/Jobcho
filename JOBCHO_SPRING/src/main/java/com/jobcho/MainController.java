@@ -8,8 +8,6 @@ public class MainController {
 	
 	@GetMapping("/")
     public String redirectToSignup() {
-        return "redirect:/user/signup";
+        return "redirect:/index";
     }
-	
-	//thdgywns commit
 }
